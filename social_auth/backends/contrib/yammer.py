@@ -61,7 +61,7 @@ class YammerOAuth2(BaseOAuth2):
         params = {
             'client_id': setting(self.SETTINGS_KEY_NAME, ''),
             'client_secret': setting(self.SETTINGS_SECRET_NAME, ''),
-            'code': access_token
+            'code': access_token.get("token")
         }
 
         url = '%s?%s' % (self.ACCESS_TOKEN_URL, urlencode(params))
